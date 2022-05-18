@@ -61,7 +61,8 @@ class User(UserMixin,db.Model):
 
 
 #Add Datebase
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bbqpgqeunevimc:731a94f15491a46f28fd5f02f68d59730b4fa733ecb6c500395f8c7e5921d049@ec2-18-215-96-22.compute-1.amazonaws.com:5432/d7pe0fubghi4b4
+'
 
 #Secret Key!
 app.config['SECRET_KEY'] = 'hard to guess string'
