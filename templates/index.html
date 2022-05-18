@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="bg-light p-5 rounded">
+    <div class="col-sm-8 mx-auto">
+        <h1 class="text-secondary" style="font-family: 'Tangerine', cursive; font-weight: bold ;font-size: 40px;">Welcome to My pitch app</h1>
+        <p >You get to pitche any ideas and there are different categories to choose from</p>
+        <p >Get to share your idea in this pitch app</p>
+        <p>
+            <a class="btn btn-danger"  href="{{ url_for('login_post') }}" role="button">Create Pitches &raquo;</a>
+        </p>
+
+    </div>
+
+
+</div>
+
+{% endblock %}

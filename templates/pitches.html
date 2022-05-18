@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ message }}    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    
+{% endfor %}
+
+<div class="shadow p-3 mb-5 bg-body rounded">
+
+{% for post in posts %}
+  <h1 style="font-family: 'Tangerine', cursive; font-weight: bold;">{{ post.title }}<br/></h1>
+  By: {{ post.author }}<br/>
+  <p>{{ post.slug }} | {{ post.date_posted }}<br/></p>
+  {{ post.content }}<br/><br/>
+  
+    <button id="likebtn">
+      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+    </button>
+    <input type="number" id="input1" value="5">
+    <button id="dislikebtn">
+      <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+  </button>
+  <input type="number" id="input2" value="6">
+  <hr><br/>
+  
+{% endfor %}
+
+<script type="text/javascript">
+    let likebtn = document.querySelector('#likebtn');
+    let dislikebtn = document.querySelector('#dislikebtn');
+    let input1 = document.querySelector('#input1');
+    let input2 = document.querySelector('#input2');
+
+    likebtn.addEventListener('click',()=>{
+        input1.value = parseInt(input1.value) + 1;
+        input1.style.color = "#12ff00";
+
+    })
+    dislikebtn.addEventListener('click',()=>{
+        input2.value = parseInt(input2.value) + 1;
+        input2.style.color = "#ff0000";
+        
+    })
+
+
+</script>
+  
+
+
+
+
+{% endblock %}
